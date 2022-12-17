@@ -1,11 +1,18 @@
 import React from 'react'
 import { Container, Card, Button, Row, Col, Modal } from 'react-bootstrap';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+import { addToCart } from '../actions/cartAction'
 
 const Pizza = ({ pizza }) => {
     const [varient, setVarient] = useState('small');
     const [quantity, setQuantity] = useState(1);
     const [show, setShow] = useState(false);
+
+    const dispatch = useDispatch()
+    // const cartstate = useSelector((state) => state.cartReducer)
+
+
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -39,7 +46,9 @@ const Pizza = ({ pizza }) => {
                     </Card.Text>
                     <Row>
                         <Col md={6}><h6>{quantity * pizza.prices[0][varient]}</h6></Col>
-                        <Col md={6}><Button className="bg-warning text-white">Add to Cart</Button></Col>
+                        <Col md={6}><Button
+                            onClick={()=>dispatch(addToCart(pizza, quantity, varient))}
+                            className="bg-warning text-white">Add to Cart</Button></Col>
                     </Row>
 
                 </Card.Body>
@@ -49,9 +58,9 @@ const Pizza = ({ pizza }) => {
                 <Modal.Header closeButton>
                     <Modal.Title>{pizza.name}</Modal.Title>
                 </Modal.Header>
-                <img src={pizza.image}/>
+                <img src={pizza.image} />
                 <Modal.Body>{pizza.description}</Modal.Body>
-                
+
             </Modal>
 
         </>
