@@ -14,7 +14,7 @@ app.use(cors())
 app.use(express.json());
 app.use(morgan('dev'));
 
-app.use('/api/pizzas/',require('./routes/users'));
+app.use('/api/pizzas/',require('./routes/usersRoutes'));
 app.use('/api/pizzas/',require('./routes/pizzaRoute'));
 
 
