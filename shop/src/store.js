@@ -8,7 +8,7 @@ import { userLoginReducer } from './reducers/userReducer'
 
 
 const cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
-const currentUser = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('currentUser')) : null
+const currentUser = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')) : null
 const rootReducer = combineReducers({
     getAllPizzaReducer: getAllPizzaReducer,
     cartReducer: cartReducer,

@@ -1,13 +1,37 @@
-import React,{useState} from 'react'
-import { Container,Form,Button } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Container, Form, Button } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { loginUser } from '../actions/userAction'
 
 const Login = () => {
+
   const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+  const [password, setPassword] = useState('')
+  const dispatch = useDispatch();
+  const loginState = useSelector(state => state.userLoginReducer);
+  const { loading, success } = loginState;
+  // const curret=useSelector(state=>state.userLoginReducer);
+  // const {currentUser}=curret;
+
+  const loginHandler = () => {
+    const user = { email, password };
+    dispatch(loginUser(user))
+    console.log(user)
+  }
+  useEffect(()=>{
+    // console.log(currentUser)
+    if(localStorage.getItem("currentUser")){
+      window.location.href="/"
+    }
+
+
+  },[])
+
+
   return (
     <>
       <Container>
-        <Form>
+        {loading ? <h1>loading</h1> : <Form>
           <h1>Login</h1>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
@@ -23,11 +47,15 @@ const Login = () => {
               placeholder="Password" />
           </Form.Group>
 
-          <Button variant="primary">
+          <Button variant="primary"
+            onClick={loginHandler}
+          >
             Login
           </Button>
-        </Form>
+        </Form>}
+
       </Container>
+      {success ? <p>Logged in</p> : <></>}
     </>
   )
 }

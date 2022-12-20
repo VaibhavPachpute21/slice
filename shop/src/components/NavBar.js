@@ -1,11 +1,14 @@
 import React from 'react'
-import { Navbar, Container, Nav } from 'react-bootstrap'
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { useDispatch,useSelector } from 'react-redux'
-
+import { useDispatch, useSelector } from 'react-redux'
+import { logoutUser } from '../actions/userAction'
 
 const NavBar = () => {
-    const cartstate=useSelector((state)=>state.cartReducer)
+    const dispatch = useDispatch()
+    const cartstate = useSelector((state) => state.cartReducer)
+    const userState = useSelector(state => state.userLoginReducer);
+    const { currentUser } = userState;
 
 
     return (
@@ -19,8 +22,21 @@ const NavBar = () => {
                             className="ms-auto mx-2"
                             style={{ maxHeight: '100px' }}
                             navbarScroll >
-                            <Nav.Link as={Link} to={"/register"}  >Register</Nav.Link>
-                            <Nav.Link as={Link} to={"/login"}  >Login</Nav.Link>
+                            {
+                                currentUser ? (
+                                    <NavDropdown title={currentUser.name} id="basic-nav-dropdown">
+                                        <NavDropdown.Item href="#action/3.1">Order</NavDropdown.Item>
+                                        <NavDropdown.Item onClick={() => { dispatch(logoutUser()) }}>Logout</NavDropdown.Item>
+                                    </NavDropdown>
+                                )
+                                    : (
+                                        <>
+                                            <Nav.Link as={Link} to={"/register"} >Register</Nav.Link>
+                                            <Nav.Link as={Link} to={"/login"}  >Login</Nav.Link>
+                                        </>
+                                    )
+                            }
+
                             <Nav.Link as={Link} to={"/cart"}  >Cart {cartstate.cartItems.length}</Nav.Link>
                         </Nav>
 
