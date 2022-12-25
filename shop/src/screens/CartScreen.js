@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { HiMinusCircle,HiTrash } from 'react-icons/hi'
 import { AiFillPlusCircle } from 'react-icons/ai'
 import { addToCart,deteleFromCart } from '../actions/cartAction'
+import CheckOut from '../components/checkOut'
 
 
 const CartScreen = () => {
@@ -53,7 +54,7 @@ const CartScreen = () => {
                     <Col md={4}>
                         <h2>Payments Info</h2>
                         <h5>Sub Total: {subTotal} /-</h5>
-                        <button className='btn btn-primary'>Checkout</button>
+                        <CheckOut subTotal={subTotal}></CheckOut>
                     </Col>
                 </Row>
             </Container>

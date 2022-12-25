@@ -16,7 +16,7 @@ app.use(morgan('dev'));
 
 app.use('/api/users/',require('./routes/usersRoutes'));
 app.use('/api/pizzas/',require('./routes/pizzaRoute'));
-
+app.use('/api/orders',require("./routes/oderRoutes"))
 
 const PORT=process.env.PORT || 8081
 
