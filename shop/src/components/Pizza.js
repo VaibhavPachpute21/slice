@@ -20,7 +20,7 @@ const Pizza = ({ pizza }) => {
 
     return (
         <>
-            <Card style={{ margin: '5px' }} >
+            <Card style={{ margin: '5px' }}>
                 <Card.Img variant="top" src={pizza.image} width="100%" onClick={handleShow} />
                 <Card.Body>
                     <Card.Title>{pizza.name}</Card.Title>

@@ -17,12 +17,12 @@ const OrderScreen = () => {
             {error && <h2>Error</h2>}
             <Container>
                 {
-                    orders && orders.map(order => (
-                        <Row>
+                    orders && orders.map((order,i) => (
+                        <Row key={i}>
                             <Col md={4}>
-                                <h1>{order.orderItmes.map(item => (
-                                    <h6>{item.name}:  {item.varient} * {item.quantity} = {item.price}</h6>
-                                ))}</h1>
+                                {order.orderItmes.map((item,i) => (
+                                    <h6 key={i}>{item.name}:  {item.varient} * {item.quantity} = {item.price}</h6>
+                                ))}
                             </Col>
                             <Col md={4}>
                                 <h4>Address</h4>
@@ -37,7 +37,7 @@ const OrderScreen = () => {
                                 <h6>Transaction Id: {order.transactionId}</h6>
                                 <h6>Amount: {order.orderAmount}</h6>
                             </Col>
-                            <hr/>
+                            <hr />
                         </Row>
                     ))
 
