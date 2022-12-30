@@ -17,7 +17,7 @@ const AdminScreen = () => {
             <Container>
                 <Row>
                     <h1>Admin Panel</h1>
-                    <Col md={4}>
+                    <Col md={2}>
                         <ButtonGroup vertical>
                             <Link className='btn btn-primary p-4' to={'/admin/AllUserPage'}>All Users</Link>
                             <Link className='btn btn-primary p-4' to={'/admin/AllPizzasPage'}>All Pizzas</Link>
@@ -25,7 +25,7 @@ const AdminScreen = () => {
                             <Link className='btn btn-primary p-4' to={'/admin/AllOrdersPage'}>All Orders</Link>
                         </ButtonGroup>
                     </Col>
-                    <Col md={8}>
+                    <Col md={10}>
                         <Outlet />
                     </Col>
                 </Row>

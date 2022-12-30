@@ -47,7 +47,7 @@ const Pizza = ({ pizza }) => {
                     <Row>
                         <Col md={6}><h6>{quantity * pizza.prices[0][varient]}</h6></Col>
                         <Col md={6}><Button
-                            onClick={()=>dispatch(addToCart(pizza, quantity, varient))}
+                            onClick={() => dispatch(addToCart(pizza, quantity, varient))}
                             className="bg-warning text-white">Add to Cart</Button></Col>
                     </Row>
 
