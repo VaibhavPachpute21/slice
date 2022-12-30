@@ -9,22 +9,35 @@ import CartScreen from './screens/CartScreen';
 import Register from './screens/Register';
 import Login from './screens/Login';
 import OrderScreen from './screens/OrderScreen';
+import AdminScreen from './screens/AdminScreen';
+import AllUserPage from './screens/AdminScreens/AllUsersPage'
+import AllPizzasPage from './screens/AdminScreens/AllPizzasPage'
+import AddNewPizzaPage from './screens/AdminScreens/AddNewPizzaPage';
+import AllOrdersPage from './screens/AdminScreens/AllOrdersPage';
 
 function App() {
   return (
     <>
       <TopBar />
-      <NavBar/>
+      <NavBar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/About' element={<About />} />
         <Route path='/Contact' element={<Contact />} />
-        <Route path='/cart' element={<CartScreen/>}/>
+        <Route path='/cart' element={<CartScreen />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login/>} />
-        <Route path='/orders' element={<OrderScreen/>} />
-      </Routes>
+        <Route path='/login' element={<Login />} />
+        <Route path='/orders' element={<OrderScreen />} />
+        <Route path='/admin' element={<AdminScreen />}>
+          <Route path='AllUserPage' element={<AllUserPage />} />
+          <Route path='AllPizzasPage' element={<AllPizzasPage />} />
+          <Route path='AddNewPizzaPage' element={<AddNewPizzaPage />} />
+          <Route path='AllOrdersPage' element={<AllOrdersPage />} />
+          </Route>
+        
 
+
+      </Routes>
     </>
   );
 }
