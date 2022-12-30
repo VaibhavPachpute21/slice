@@ -48,15 +48,16 @@ router.post('/login', async (req, res) => {
 })
 
 // ROUTE TO GET ALL PIZZAS
-router.get('/', (req, res) => {
-    pizzas.find({}, function (err, posts) {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            res.json(posts);
-        }
-    });
+router.get('/allUsers',async (req, res) => {
+    try {
+        const users =await userModel.find({});
+        res.send(users);
+    } catch (error) {
+        res.json({
+            "error":error
+        })
+        
+    }
 });
 
 

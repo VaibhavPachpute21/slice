@@ -41,3 +41,22 @@ export const userLoginReducer = (state = {}, action) => {
             return state;
     }
 }
+
+export const getAllUsersReducer = (state={allUsers:[]}, action) => {
+    switch (action.type) {
+
+        case "GET_ALL_USERS_SUCCESS":
+            return {
+                allUsers: action.payload,
+
+            }
+        case "GET_ALL_USER_FAIL":
+            return {
+                error: action.payload
+            }
+        default:
+            return state;
+    }
+}
+
+
