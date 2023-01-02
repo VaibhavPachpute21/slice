@@ -69,5 +69,17 @@ router.post('/getuserorder', async (req, res) => {
     }
 })
 
+router.get('/getAllOrders', async(req,res)=>{
+    
+    try {
+        const allOrders=await Order.find({});
+        res.send(allOrders)
+    } catch (error) {
+        res.status(400).json({
+            message:"Something went wrong"
+        })
+    }
+})
+
 
 module.exports = router
