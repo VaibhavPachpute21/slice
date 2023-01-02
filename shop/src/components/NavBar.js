@@ -40,6 +40,7 @@ const NavBar = () => {
                             }
 
                             <Nav.Link as={Link} to={"/cart"}  >Cart {cartstate.cartItems.length}</Nav.Link>
+                            {currentUser?.isAdmin? (<Nav.Link as={Link} to={'/admin'}>Admin</Nav.Link>):(<></>)}
                         </Nav>
 
                     </Navbar.Collapse>

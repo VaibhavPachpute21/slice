@@ -1,6 +1,7 @@
-import React from 'react'
-import { Row, Col, Container, ButtonGroup, Button } from 'react-bootstrap'
-import { Routes, Route, useNavigate, Outlet, Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Row, Col, Container, ButtonGroup } from 'react-bootstrap'
+import { Outlet, Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 
 import AllUserPage from './AdminScreens/AllUsersPage'
 import AllPizzasPage from './AdminScreens/AllPizzasPage'
@@ -10,7 +11,12 @@ import AllOrdersPage from './AdminScreens/AllOrdersPage'
 
 
 const AdminScreen = () => {
-    const navigate = useNavigate();
+    const userState=useSelector(state=>state.userLoginReducer);
+    useEffect(() => {
+        if(userState.currentUser.isAdmin==false){
+            window.location.href='/'
+        }
+    })
 
     return (
         <>
