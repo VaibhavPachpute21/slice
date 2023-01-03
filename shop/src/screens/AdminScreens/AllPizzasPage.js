@@ -3,10 +3,12 @@ import { getAllPizzas } from '../../actions/pizzaAction'
 import { useDispatch, useSelector } from 'react-redux'
 import { Table } from 'react-bootstrap';
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai'
+import {useNavigate} from 'react-router-dom'
 
 
 const AllPizzasPage = () => {
   const dispatch = useDispatch()
+  const navigate=useNavigate()
   const pizzastate = useSelector(state => state.getAllPizzaReducer);
   const { pizzas, loading, error } = pizzastate;
 
@@ -36,7 +38,10 @@ const AllPizzasPage = () => {
                   Large:{pizza.prices[0]['large']}
                 </td>
                 <td>{pizza.category}</td>
-                <td><AiFillEdit /> &nbsp; <AiFillDelete /> </td>
+                <td><AiFillEdit
+                style={{cursor:'pointer'}}
+                onClick={()=>{navigate('/admin/EditPizzaScreen',{state:{pizza}})}}
+                 /> &nbsp; <AiFillDelete /> </td>
               </tr>
             ))}
           </tbody>

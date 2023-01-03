@@ -14,6 +14,7 @@ import AllUserPage from './screens/AdminScreens/AllUsersPage'
 import AllPizzasPage from './screens/AdminScreens/AllPizzasPage'
 import AddNewPizzaPage from './screens/AdminScreens/AddNewPizzaPage';
 import AllOrdersPage from './screens/AdminScreens/AllOrdersPage';
+import EditPizzaScreen from './screens/AdminScreens/EditPizzaScreen'
 
 function App() {
   return (
@@ -33,8 +34,9 @@ function App() {
           <Route path='AllPizzasPage' element={<AllPizzasPage />} />
           <Route path='AddNewPizzaPage' element={<AddNewPizzaPage />} />
           <Route path='AllOrdersPage' element={<AllOrdersPage />} />
-          </Route>
-        
+          <Route path='EditPizzaScreen' element={<EditPizzaScreen/>} />
+        </Route>
+
 
 
       </Routes>
