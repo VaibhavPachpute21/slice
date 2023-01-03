@@ -12,18 +12,26 @@ export const getAllPizzas = () => async (dispatch) => {
 }
 
 export const addNewPizza = (pizza) => async (dispatch) => {
-    dispatch({type:"ADD_PIZZA_REQ"})
+    dispatch({ type: "ADD_PIZZA_REQ" })
     try {
         const res = await axios.post('/api/pizzas/addNewPizza', pizza)
         dispatch({ type: 'ADD_PIZZA_SUCCESS' })
     } catch (error) {
         dispatch({ type: 'ADD_PIZZA_FAIL', payload: error })
+    }
+}
+
+export const updatePizza = ({pid,pizza}) => async (dispatch) => {
+    dispatch({ type: "UPDATE_PIZZA_REQ" })
+    try {
+        const res = await axios.put('/api/pizzas/updatePizza', {pid,pizza})
+        dispatch({ type: "UPDATE_PIZZA_SUCCESS" })
+    } catch (error) {
+        dispatch({ type: "UPDATE_PIZZA_FAIL", payload: error })
 
     }
 
-
 }
-
 // async function getPizzas(){
   //   const res=await axios.get('http://localhost:8080/api/pizzas/getAllPizzas')
   //   console.log(res.data)

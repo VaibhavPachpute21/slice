@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation,useNavigate } from 'react-router-dom'
 import { Form, Button, Container, Col, Row } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { updatePizza } from '../../actions/pizzaAction'
 
 
 const EditPizzaScreen = () => {
     const [pizzaValue, setPizzaValue] = useState({
         name: '', category: '', small: 0, medium: 0, large: 0, image: '', description: ''
     })
+    const updatePizzaState = useSelector(state => state.updatePizzaReducer);
+    const { loading, success, error } = updatePizzaState
+    const dispatch = useDispatch()
     const location = useLocation()
+    const navigate=useNavigate()
 
     useEffect(() => {
         console.log(location.state.pizza)
@@ -44,13 +50,17 @@ const EditPizzaScreen = () => {
             image: image,
             description: description
         }
-        console.log(pizza)
+        const pid = location.state.pizza._id
+        dispatch(updatePizza({ pid, pizza })).then(()=>{
+            navigate('/admin/AllPizzasPage')
+        })
+
     }
 
     return (
         <>
+        {success&&<h2>Updated!!</h2>}
             <Container>
-
                 <Row>
                     <Col md={6}>
                         <Form.Group className="mb-3">
