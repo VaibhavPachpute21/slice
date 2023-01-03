@@ -28,10 +28,22 @@ export const updatePizza = ({pid,pizza}) => async (dispatch) => {
         dispatch({ type: "UPDATE_PIZZA_SUCCESS" })
     } catch (error) {
         dispatch({ type: "UPDATE_PIZZA_FAIL", payload: error })
+    }
+}
+
+export const deletePizza = (id) => async (dispatch) => {
+    dispatch({ type: "DELETE_PIZZA_REQ" })
+    try {
+        console.log("delteteActio: "+id)
+        const res = await axios.delete(`/api/pizzas/deletePizza/${id}`)
+        dispatch({ type: "DELETE_PIZZA_SUCCESS" })
+    } catch (error) {
+        dispatch({ type: "DELETE_PIZZA_FAIL", payload: error })
 
     }
 
 }
+
 // async function getPizzas(){
   //   const res=await axios.get('http://localhost:8080/api/pizzas/getAllPizzas')
   //   console.log(res.data)

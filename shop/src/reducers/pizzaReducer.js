@@ -64,3 +64,25 @@ export const updatePizzaReducer = (state = {}, action) => {
             return state;
     }
 }
+
+export const deletePizzaReducer = (state = {}, action) => {
+    switch (action.type) {
+        case 'DELETE_PIZZA_REQ':
+            return {
+                loading: true,
+                ...state
+            }
+        case 'DELETE_PIZZA_SUCCESS':
+            return {
+                loading: false,
+                success: true
+            }
+        case 'DELETE_PIZZA_FAIL':
+            return {
+                loading: false,
+                error: action.payload
+            }
+        default:
+            return state;
+    }
+}

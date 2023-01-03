@@ -43,19 +43,33 @@ router.put('/updatePizza', async (req, res) => {
             }
             else {
                 pizzaM.name = name,
-                pizzaM.prices = prices,
-                pizzaM.category = category,
-                pizzaM.description = description,
-                pizzaM.image = image
+                    pizzaM.prices = prices,
+                    pizzaM.category = category,
+                    pizzaM.description = description,
+                    pizzaM.image = image
 
-                pizzaM.save().then(pizzaM=>{
+                pizzaM.save().then(pizzaM => {
                     res.json("updated successfully")
-                }).catch(err=>{
+                }).catch(err => {
                     res.send(err)
                 })
             }
         })
     } catch (error) {
+
+    }
+})
+
+
+router.delete('/deletePizza/:id', async (req, res) => {
+    console.log('deletion')
+    console.log(req.params.id)
+    try {
+        const pizza =await pizzaModel.findById({ _id: req.params.id })
+        await pizza.deleteOne()
+        res.send("deleted")
+    } catch (error) {
+        console.log(error)
 
     }
 })

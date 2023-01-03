@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { getAllPizzas } from '../../actions/pizzaAction'
+import { getAllPizzas,deletePizza } from '../../actions/pizzaAction'
 import { useDispatch, useSelector } from 'react-redux'
 import { Table } from 'react-bootstrap';
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai'
@@ -15,6 +15,14 @@ const AllPizzasPage = () => {
   useEffect(() => {
     dispatch(getAllPizzas())
   }, [dispatch])
+
+  const deletePizzaHandler=(id)=>{
+    console.log(id);
+    dispatch(deletePizza(id)).then(()=>{
+      window.location.href='/admin/AllPizzasPage'
+    })
+
+  }
 
   return (
     <>{
@@ -41,7 +49,10 @@ const AllPizzasPage = () => {
                 <td><AiFillEdit
                 style={{cursor:'pointer'}}
                 onClick={()=>{navigate('/admin/EditPizzaScreen',{state:{pizza}})}}
-                 /> &nbsp; <AiFillDelete /> </td>
+                 /> &nbsp; <AiFillDelete
+                 style={{cursor:'pointer'}}
+                 onClick={()=>{deletePizzaHandler(pizza._id)}}
+                  /> </td>
               </tr>
             ))}
           </tbody>
