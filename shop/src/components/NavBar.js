@@ -15,7 +15,7 @@ const NavBar = () => {
         <>
             <Navbar bg={"light"} variant={"light"} expand="lg">
                 <Container >
-                    <Navbar.Brand as={Link} to={"/"} ><img src="./images/logo.png" width={'300px'} /></Navbar.Brand>
+                    <Navbar.Brand as={Link} to={"/"} ><img src="./images/logo.png" width={'200px'} /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
