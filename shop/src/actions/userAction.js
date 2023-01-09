@@ -29,7 +29,7 @@ export const logoutUser = (dispatch) => {
     window.location.href = '/login'
 }
 
-export const getAllUsers =() => async (dispatch) => {
+export const getAllUsers = () => async (dispatch) => {
     try {
         const res = await axios.get('/api/users/allUsers');
         console.log(res.data)

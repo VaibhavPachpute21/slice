@@ -65,7 +65,7 @@ router.delete('/deletePizza/:id', async (req, res) => {
     console.log('deletion')
     console.log(req.params.id)
     try {
-        const pizza =await pizzaModel.findById({ _id: req.params.id })
+        const pizza = await pizzaModel.findById({ _id: req.params.id })
         await pizza.deleteOne()
         res.send("deleted")
     } catch (error) {

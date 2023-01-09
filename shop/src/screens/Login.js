@@ -18,14 +18,14 @@ const Login = () => {
     dispatch(loginUser(user))
     console.log(user)
   }
-  useEffect(()=>{
+  useEffect(() => {
     // console.log(currentUser)
-    if(localStorage.getItem("currentUser")){
-      window.location.href="/"
+    if (localStorage.getItem("currentUser")) {
+      window.location.href = "/"
     }
 
 
-  },[])
+  }, [])
 
 
   return (

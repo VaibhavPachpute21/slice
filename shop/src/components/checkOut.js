@@ -18,8 +18,8 @@ const CheckOut = ({ subTotal }) => {
             {loading && (<p>Loading</p>)}
             {error && (<p>Error occured</p>)}
             {success && (<p>Success</p>)}
-            
-                <StripeCheckout
+
+            <StripeCheckout
                 amount={subTotal * 100}
                 shippingAddress
                 token={tokenHandler}
@@ -28,7 +28,7 @@ const CheckOut = ({ subTotal }) => {
             >
                 <Button>Pay now</Button>
             </StripeCheckout>
-            
+
         </>
     )
 }

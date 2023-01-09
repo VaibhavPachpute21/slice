@@ -17,10 +17,10 @@ const OrderScreen = () => {
             {error && <h2>Error</h2>}
             <Container>
                 {
-                    orders && orders.map((order,i) => (
+                    orders && orders.map((order, i) => (
                         <Row key={i}>
                             <Col md={4}>
-                                {order.orderItmes.map((item,i) => (
+                                {order.orderItmes.map((item, i) => (
                                     <h6 key={i}>{item.name}:  {item.varient} * {item.quantity} = {item.price}</h6>
                                 ))}
                             </Col>

@@ -42,7 +42,7 @@ export const userLoginReducer = (state = {}, action) => {
     }
 }
 
-export const getAllUsersReducer = (state={allUsers:[]}, action) => {
+export const getAllUsersReducer = (state = { allUsers: [] }, action) => {
     switch (action.type) {
 
         case "GET_ALL_USERS_SUCCESS":

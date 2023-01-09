@@ -28,35 +28,35 @@ router.post('/login', async (req, res) => {
             const currentUser = {
                 name: user[0].name,
                 email: user[0].email,
-                isAdmin:user[0].isAdmin,
-                _id:user[0]._id
+                isAdmin: user[0].isAdmin,
+                _id: user[0]._id
             }
             res.status(200).send(currentUser)
         }
-        else{
+        else {
             res.status(400).json({
-                message:"Login Failed"
+                message: "Login Failed"
             })
         }
 
     } catch (error) {
         res.status(404).json({
-            message:"Something went wrong"
+            message: "Something went wrong"
         })
 
     }
 })
 
 // ROUTE TO GET ALL PIZZAS
-router.get('/allUsers',async (req, res) => {
+router.get('/allUsers', async (req, res) => {
     try {
-        const users =await userModel.find({});
+        const users = await userModel.find({});
         res.send(users);
     } catch (error) {
         res.json({
-            "error":error
+            "error": error
         })
-        
+
     }
 });
 

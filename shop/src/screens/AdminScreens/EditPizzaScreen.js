@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation,useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { Form, Button, Container, Col, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { updatePizza } from '../../actions/pizzaAction'
@@ -13,7 +13,7 @@ const EditPizzaScreen = () => {
     const { loading, success, error } = updatePizzaState
     const dispatch = useDispatch()
     const location = useLocation()
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
     useEffect(() => {
         console.log(location.state.pizza)
@@ -51,7 +51,7 @@ const EditPizzaScreen = () => {
             description: description
         }
         const pid = location.state.pizza._id
-        dispatch(updatePizza({ pid, pizza })).then(()=>{
+        dispatch(updatePizza({ pid, pizza })).then(() => {
             navigate('/admin/AllPizzasPage')
         })
 
@@ -59,7 +59,7 @@ const EditPizzaScreen = () => {
 
     return (
         <>
-        {success&&<h2>Updated!!</h2>}
+            {success && <h2>Updated!!</h2>}
             <Container>
                 <Row>
                     <Col md={6}>

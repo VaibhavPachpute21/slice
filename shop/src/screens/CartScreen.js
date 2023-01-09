@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Container, Row, Col } from 'react-bootstrap'
-import { HiMinusCircle,HiTrash } from 'react-icons/hi'
+import { HiMinusCircle, HiTrash } from 'react-icons/hi'
 import { AiFillPlusCircle } from 'react-icons/ai'
-import { addToCart,deteleFromCart } from '../actions/cartAction'
+import { addToCart, deteleFromCart } from '../actions/cartAction'
 import CheckOut from '../components/checkOut'
 
 
@@ -11,7 +11,7 @@ const CartScreen = () => {
 
     const cartItems = useSelector((state) => state.cartReducer.cartItems)
     const dispatch = useDispatch()
-    const subTotal=cartItems.reduce((x,item)=>  x+item.price,0);
+    const subTotal = cartItems.reduce((x, item) => x + item.price, 0);
 
     return (
         <>
@@ -27,13 +27,13 @@ const CartScreen = () => {
                                         <h6>Price: {cartItem.quantity} X {cartItem.prices[0][cartItem.varient]} = {cartItem.price}</h6>
                                         <h6>Quantity: &nbsp;
                                             <HiMinusCircle
-                                            style={{cursor:'pointer'}}
-                                                onClick={() => dispatch(addToCart(cartItem, cartItem.quantity-1, cartItem.varient))}
+                                                style={{ cursor: 'pointer' }}
+                                                onClick={() => dispatch(addToCart(cartItem, cartItem.quantity - 1, cartItem.varient))}
                                                 className='text-danger' />&nbsp;
                                             {cartItem.quantity}&nbsp;
                                             <AiFillPlusCircle
-                                            style={{cursor:'pointer'}}
-                                                onClick={() =>{ dispatch(addToCart(cartItem, cartItem.quantity+1, cartItem.varient))}}
+                                                style={{ cursor: 'pointer' }}
+                                                onClick={() => { dispatch(addToCart(cartItem, cartItem.quantity + 1, cartItem.varient)) }}
                                                 className='text-success' />
                                         </h6>
                                     </Col>
@@ -42,8 +42,8 @@ const CartScreen = () => {
                                             style={{ width: '80px', height: '80px' }}
                                         />&nbsp;&nbsp;&nbsp;
                                         <HiTrash
-                                        style={{cursor:'pointer'}}
-                                        onClick={()=>{dispatch(deteleFromCart(cartItem))}}
+                                            style={{ cursor: 'pointer' }}
+                                            onClick={() => { dispatch(deteleFromCart(cartItem)) }}
                                         />
                                     </Col>
                                     <hr />

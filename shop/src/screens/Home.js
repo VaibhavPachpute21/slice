@@ -20,7 +20,7 @@ const Home = () => {
             <Row>
               {pizzas.map((pizza) => (
                 <Col md={4} key={pizza.name}>
-                  <Pizza pizza={pizza}/>
+                  <Pizza pizza={pizza} />
                 </Col>
               ))}
             </Row>

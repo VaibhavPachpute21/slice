@@ -9,9 +9,9 @@ const connectDB = async () => {
     try {
         const SERVER = process.env.MONGO_URI;
         console.log((SERVER))
-        const conn = await mongoose.connect(SERVER,{
+        const conn = await mongoose.connect(SERVER, {
             useNewUrlParser: true,
-            
+
         });
 
         console.log(`connected at ${conn.connection.host}`)

@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
-import { getAllPizzas,deletePizza } from '../../actions/pizzaAction'
+import { getAllPizzas, deletePizza } from '../../actions/pizzaAction'
 import { useDispatch, useSelector } from 'react-redux'
 import { Table } from 'react-bootstrap';
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 const AllPizzasPage = () => {
   const dispatch = useDispatch()
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   const pizzastate = useSelector(state => state.getAllPizzaReducer);
   const { pizzas, loading, error } = pizzastate;
 
@@ -16,10 +16,10 @@ const AllPizzasPage = () => {
     dispatch(getAllPizzas())
   }, [dispatch])
 
-  const deletePizzaHandler=(id)=>{
+  const deletePizzaHandler = (id) => {
     console.log(id);
-    dispatch(deletePizza(id)).then(()=>{
-      window.location.href='/admin/AllPizzasPage'
+    dispatch(deletePizza(id)).then(() => {
+      window.location.href = '/admin/AllPizzasPage'
     })
 
   }
@@ -47,11 +47,11 @@ const AllPizzasPage = () => {
                 </td>
                 <td>{pizza.category}</td>
                 <td><AiFillEdit
-                style={{cursor:'pointer'}}
-                onClick={()=>{navigate('/admin/EditPizzaScreen',{state:{pizza}})}}
-                 /> &nbsp; <AiFillDelete
-                 style={{cursor:'pointer'}}
-                 onClick={()=>{deletePizzaHandler(pizza._id)}}
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => { navigate('/admin/EditPizzaScreen', { state: { pizza } }) }}
+                /> &nbsp; <AiFillDelete
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => { deletePizzaHandler(pizza._id) }}
                   /> </td>
               </tr>
             ))}

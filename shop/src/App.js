@@ -34,7 +34,7 @@ function App() {
           <Route path='AllPizzasPage' element={<AllPizzasPage />} />
           <Route path='AddNewPizzaPage' element={<AddNewPizzaPage />} />
           <Route path='AllOrdersPage' element={<AllOrdersPage />} />
-          <Route path='EditPizzaScreen' element={<EditPizzaScreen/>} />
+          <Route path='EditPizzaScreen' element={<EditPizzaScreen />} />
         </Route>
 
 

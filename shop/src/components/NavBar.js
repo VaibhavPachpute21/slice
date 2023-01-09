@@ -27,7 +27,7 @@ const NavBar = () => {
                                     <NavDropdown title={currentUser.name} id="basic-nav-dropdown">
                                         <NavDropdown.Item>
                                             <Nav.Link as={Link} to={"/orders"} >Order</Nav.Link>
-                                            </NavDropdown.Item>
+                                        </NavDropdown.Item>
                                         <NavDropdown.Item onClick={() => { dispatch(logoutUser()) }}>Logout</NavDropdown.Item>
                                     </NavDropdown>
                                 )
@@ -40,7 +40,7 @@ const NavBar = () => {
                             }
 
                             <Nav.Link as={Link} to={"/cart"}  >Cart {cartstate.cartItems.length}</Nav.Link>
-                            {currentUser?.isAdmin? (<Nav.Link as={Link} to={'/admin'}>Admin</Nav.Link>):(<></>)}
+                            {currentUser?.isAdmin ? (<Nav.Link as={Link} to={'/admin'}>Admin</Nav.Link>) : (<></>)}
                         </Nav>
 
                     </Navbar.Collapse>

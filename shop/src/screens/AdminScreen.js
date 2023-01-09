@@ -11,10 +11,10 @@ import AllOrdersPage from './AdminScreens/AllOrdersPage'
 
 
 const AdminScreen = () => {
-    const userState=useSelector(state=>state.userLoginReducer);
+    const userState = useSelector(state => state.userLoginReducer);
     useEffect(() => {
-        if(userState.currentUser.isAdmin==false){
-            window.location.href='/'
+        if (userState.currentUser.isAdmin == false) {
+            window.location.href = '/'
         }
     })
 
