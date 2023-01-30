@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Container, Form, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { registUser } from '../actions/userAction'
+import Loader from './Loader'
 
 const Register = () => {
     const [name, setName] = useState('')
@@ -21,7 +22,7 @@ const Register = () => {
     return (
         <>
             <Container>
-                {loading ? <h5>Loading</h5> :
+                {loading ? <Loader/> :
                     <Form>
                         <h1>Registration</h1>
                         <Form.Group className="mb-3" controlId="formBasicName">

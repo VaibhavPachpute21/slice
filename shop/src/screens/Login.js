@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Container, Form, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginUser } from '../actions/userAction'
+import Loader from './Loader'
 
 const Login = () => {
 
@@ -31,7 +32,7 @@ const Login = () => {
   return (
     <>
       <Container>
-        {loading ? <h1>loading</h1> : <Form>
+        {loading ? <Loader/> : <Form>
           <h1>Login</h1>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>

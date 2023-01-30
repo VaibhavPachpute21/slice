@@ -3,6 +3,7 @@ import StripeCheckout from 'react-stripe-checkout';
 import { Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { placeOrder } from '../actions/orderAction'
+import Loader from '../screens/Loader';
 
 
 const CheckOut = ({ subTotal }) => {
@@ -15,8 +16,8 @@ const CheckOut = ({ subTotal }) => {
     }
     return (
         <>
-            {loading && (<p>Loading</p>)}
-            {error && (<p>Error occured</p>)}
+            {loading && (<Loader/>)}
+            {error && (<p>Something went wrong!!</p>)}
             {success && (<p>Success</p>)}
 
             <StripeCheckout

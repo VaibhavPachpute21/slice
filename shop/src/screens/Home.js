@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Col, Container, Row } from 'react-bootstrap';
 import Pizza from '../components/Pizza';
 import { getAllPizzas } from '../actions/pizzaAction'
+import Loader from './Loader'
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -15,7 +16,7 @@ const Home = () => {
   return (
     <>
       <Container className='mt-5 mb-5'>
-        {loading ? (<h1>Loading...</h1>)
+        {loading ? (<Loader/>)
           : error ? (<h1>Error while fetching</h1>) :
             <Row>
               {pizzas.map((pizza) => (
