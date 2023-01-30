@@ -3,6 +3,7 @@ import { Container, Card, Button, Row, Col, Modal } from 'react-bootstrap';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '../actions/cartAction'
+import '../App.css'
 
 const Pizza = ({ pizza }) => {
     const [varient, setVarient] = useState('small');
@@ -20,7 +21,7 @@ const Pizza = ({ pizza }) => {
 
     return (
         <>
-            <Card style={{ margin: '5px' }}>
+            <Card style={{ margin: '5px' }} className='shadow mt-4' >
                 <Card.Img variant="top" src={pizza.image} width="100%" onClick={handleShow} />
                 <Card.Body>
                     <Card.Title>{pizza.name}</Card.Title>
@@ -48,7 +49,7 @@ const Pizza = ({ pizza }) => {
                         <Col md={6}><h6>{quantity * pizza.prices[0][varient]}</h6></Col>
                         <Col md={6}><Button
                             onClick={() => dispatch(addToCart(pizza, quantity, varient))}
-                            className="bg-warning text-white">Add to Cart</Button></Col>
+                            className="btn addToCartBtn">Add to Cart</Button></Col>
                     </Row>
 
                 </Card.Body>

@@ -1,3 +1,4 @@
+/* Loader */
 .loader {
   display: flex;
   align-content: center !important;
@@ -34,4 +35,20 @@
   40% {
     transform: scaleY(1);
   }
+}
+
+
+/* addToCartBtn */
+.addToCartBtn{
+  background-color: transparent;
+  color: green;
+  /* padding: 3px 7px 3px 7px; */
+  border: 1px solid green; 
+  border-radius: 2px;
+}
+
+.addToCartBtn:hover{
+  background-color: transparent;
+  color: green;
+  border: 1px solid green; 
 }

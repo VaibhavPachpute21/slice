@@ -15,18 +15,20 @@ const Home = () => {
 
   return (
     <>
-      <Container className='mt-5 mb-5'>
+    <div className='light'>
+      <Container className='pb-5'>
         {loading ? (<Loader/>)
           : error ? (<h1>Error while fetching</h1>) :
             <Row>
               {pizzas.map((pizza) => (
-                <Col md={4} key={pizza.name}>
+                <Col md={3} key={pizza.name}>
                   <Pizza pizza={pizza} />
                 </Col>
               ))}
             </Row>
         }
       </Container>
+      </div>
     </>
   )
 }

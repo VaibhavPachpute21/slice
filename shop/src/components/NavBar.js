@@ -45,7 +45,9 @@ const NavBar = () => {
 
                     </Navbar.Collapse>
                 </Container>
+            
             </Navbar>
+            <hr className='border border-danger border-2 opacity-50 p-0 m-0'/>
         </>
     )
 }
