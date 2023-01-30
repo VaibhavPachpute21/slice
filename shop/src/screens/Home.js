@@ -17,7 +17,7 @@ const Home = () => {
     <>
     <div className='light'>
       <Container className='pb-5'>
-        {loading ? (<Loader/>)
+        {loading ? (<Container className='d-flex justify-content-center align-self-center pt-5'><img src='./images/loader.gif'/></Container>)
           : error ? (<h1>Error while fetching</h1>) :
             <Row>
               {pizzas.map((pizza) => (
