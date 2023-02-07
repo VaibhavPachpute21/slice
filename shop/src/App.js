@@ -15,12 +15,15 @@ import AllPizzasPage from './screens/AdminScreens/AllPizzasPage'
 import AddNewPizzaPage from './screens/AdminScreens/AddNewPizzaPage';
 import AllOrdersPage from './screens/AdminScreens/AllOrdersPage';
 import EditPizzaScreen from './screens/AdminScreens/EditPizzaScreen'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <>
       <TopBar />
       <NavBar />
+      <ToastContainer position='top-center'/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/About' element={<About />} />

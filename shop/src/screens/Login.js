@@ -3,6 +3,7 @@ import { Container, Form, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginUser } from '../actions/userAction'
 import Loader from './Loader'
+import {toast} from 'react-toastify'
 
 const Login = () => {
 
@@ -17,7 +18,7 @@ const Login = () => {
   const loginHandler = () => {
     const user = { email, password };
     dispatch(loginUser(user))
-    console.log(user)
+    // console.log(user)
   }
   useEffect(() => {
     // console.log(currentUser)
@@ -51,6 +52,7 @@ const Login = () => {
 
           <Button variant="danger opacity-60 rounded-0"
             onClick={loginHandler}
+            // onClick={toast.success("YOYO")}
           >
             Login
           </Button>
@@ -59,7 +61,6 @@ const Login = () => {
         }
 
       </Container>
-      {success ? <p>Logged in</p> : <></>}
     </>
   )
 }

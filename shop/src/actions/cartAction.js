@@ -1,3 +1,5 @@
+import {toast} from 'react-toastify'
+
 export const addToCart = (pizza, quantity, varient) => (dispatch, getState) => {
     var cartItem = {
         name: pizza.name,
@@ -20,6 +22,8 @@ export const addToCart = (pizza, quantity, varient) => (dispatch, getState) => {
             localStorage.setItem(
                 "cartItems",
                 JSON.stringify(getState().cartReducer.cartItems))
+            toast("Added to Cart!")
+            
         }
     }
 

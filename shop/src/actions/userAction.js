@@ -1,10 +1,12 @@
 import axios from 'axios'
+import {toast} from 'react-toastify'
 
 export const registUser = (user) => async dispatch => {
     dispatch({ type: "REGISTER_USER_REQUEST" })
     try {
         const res = await axios.post('/api/users/register', user)
         dispatch({ type: "REGISTER_USER_SUCCESS" })
+        toast.success("User Registered!!")
     } catch (error) {
         dispatch({ type: "REGISTER_USER_ERROR", payload: error })
     }
@@ -17,6 +19,7 @@ export const loginUser = (user) => async dispatch => {
         const res = await axios.post('/api/users/login', user)
         dispatch({ type: "USER_LOGIN_SUCCESS", payload: res.data });
         localStorage.setItem('currentUser', JSON.stringify(res.data));
+        toast.success("Logged In!!")
         window.location.href = "/"
 
     } catch (error) {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, Form, Button, Row,Col } from 'react-bootstrap'
+import { Form, Button, Row,Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { registUser } from '../actions/userAction'
 import Loader from './Loader'
@@ -62,7 +62,6 @@ const Register = () => {
                     // </Container>
                     }
             </div>
-            {success ? <h3>Registed User!!</h3> : <></>}
         </div>
     )
 }
