@@ -31,9 +31,10 @@ const Login = () => {
 
   return (
     <>
-      <Container>
-        {loading ? <Loader/> : <Form>
-          <h1>Login</h1>
+      <Container className='p-5'>
+        {loading ? <Loader/> : 
+        <Container className='border border-2 border-danger border-opacity-50 p-5 rounded-5 col-md-5'>
+        <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email"
@@ -48,12 +49,14 @@ const Login = () => {
               placeholder="Password" />
           </Form.Group>
 
-          <Button variant="primary"
+          <Button variant="danger opacity-60 rounded-0"
             onClick={loginHandler}
           >
             Login
           </Button>
-        </Form>}
+        </Form>
+        </Container>
+        }
 
       </Container>
       {success ? <p>Logged in</p> : <></>}
