@@ -25,12 +25,6 @@ This project serves as a comprehensive solution for a pizza shop, offering a con
 [<img src="https://raw.githubusercontent.com/VaibhavPachpute21/slice/main/outputs/slice%205.png"/>](https://i.ibb.co/FV5NxND/slice-5.png)
 
 
-## Usage
-
-- Upon opening a extension you will be greeted with a message, and the current date and time will be displayed.
-- Navigate to the weather app section to check the current weather conditions.
-- Use the todo list feature to manage your tasks efficiently.
-
 ## Development
 
 ### Prerequisites
