@@ -18,11 +18,11 @@
 This project serves as a comprehensive solution for a pizza shop, offering a convenient and secure platform for users to order their favorite pizzas while providing administrators with the tools necessary to manage the store efficiently.
 
 ## Screenshots
-[<img src="https://i.ibb.co/mc5bHTw/slice-1.png"/>](https://i.ibb.co/mc5bHTw/slice-1.png)
-[<img src="https://i.ibb.co/YXp93hN/slice-2.png"/>](https://i.ibb.co/YXp93hN/slice-2.png)
-[<img src="https://i.ibb.co/HXstzxr/slice-3.png"/>](https://i.ibb.co/HXstzxr/slice-3.png)
-[<img src="https://i.ibb.co/Q60MNXD/slice-4.png"/>](https://i.ibb.co/Q60MNXD/slice-4.png)
-[<img src="https://i.ibb.co/FV5NxND/slice-5.png"/>](https://i.ibb.co/FV5NxND/slice-5.png)
+[<img src="https://raw.githubusercontent.com/VaibhavPachpute21/slice/main/outputs/slice%201.png"/>](https://i.ibb.co/mc5bHTw/slice-1.png)
+[<img src="https://raw.githubusercontent.com/VaibhavPachpute21/slice/main/outputs/slice%202.png"/>](https://i.ibb.co/YXp93hN/slice-2.png)
+[<img src="https://raw.githubusercontent.com/VaibhavPachpute21/slice/main/outputs/slice%203.png"/>](https://i.ibb.co/HXstzxr/slice-3.png)
+[<img src="https://raw.githubusercontent.com/VaibhavPachpute21/slice/main/outputs/slice%204.png"/>](https://i.ibb.co/Q60MNXD/slice-4.png)
+[<img src="https://raw.githubusercontent.com/VaibhavPachpute21/slice/main/outputs/slice%205.png"/>](https://i.ibb.co/FV5NxND/slice-5.png)
 
 
 ## Usage
