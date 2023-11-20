@@ -1,4 +1,3 @@
-
 # Slice - Pizza shop 
 ## E-commerce store
 
@@ -19,12 +18,11 @@
 This project serves as a comprehensive solution for a pizza shop, offering a convenient and secure platform for users to order their favorite pizzas while providing administrators with the tools necessary to manage the store efficiently.
 
 ## Screenshots
-
-![Screenshot 1](https://i.ibb.co/mc5bHTw/slice-1.png)
-![Screenshot 1](https://i.ibb.co/YXp93hN/slice-2.png)
-![Screenshot 1](https://i.ibb.co/HXstzxr/slice-3.png)
-![Screenshot 1](https://i.ibb.co/Q60MNXD/slice-4.png)
-![Screenshot 1](https://i.ibb.co/FV5NxND/slice-5.png)
+[<img src="https://i.ibb.co/mc5bHTw/slice-1.png"/>](https://i.ibb.co/mc5bHTw/slice-1.png)
+[<img src="https://i.ibb.co/YXp93hN/slice-2.png"/>](https://i.ibb.co/YXp93hN/slice-2.png)
+[<img src="https://i.ibb.co/HXstzxr/slice-3.png"/>](https://i.ibb.co/HXstzxr/slice-3.png)
+[<img src="https://i.ibb.co/Q60MNXD/slice-4.png"/>](https://i.ibb.co/Q60MNXD/slice-4.png)
+[<img src="https://i.ibb.co/FV5NxND/slice-5.png"/>](https://i.ibb.co/FV5NxND/slice-5.png)
 
 
 ## Usage
